@@ -38,7 +38,7 @@ public class FileUtil {
             String line;
             reader.readLine();
             while ((line = reader.readLine()) != null) {
-                values = values + (isFirst ? "" : ", ") + "(\'" + line.replace("\'", "").replace(",", "\',\'") + "\')";
+                values = values + (isFirst ? "" : ", ") + "(\'" + line.replace("\'", "&apos;").replace(",", "\',\'") + "\')";
                 id++;
                 isFirst = false;
                 if (id % sizeInsert > sizeInsert - 2) {

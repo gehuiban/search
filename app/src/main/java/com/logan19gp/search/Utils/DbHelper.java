@@ -144,9 +144,9 @@ public class DbHelper extends SQLiteOpenHelper {
                 Product product = new Product();
                 product.setId(cursor.getInt(0));
                 product.setUpc(cursor.getLong(1));
-                product.setDescription(cursor.getString(2));
-                product.setManufacturer(cursor.getString(3));
-                product.setBrand(cursor.getString(4));
+                product.setDescription(cursor.getString(2).replace("&apos;", "'"));
+                product.setManufacturer(cursor.getString(3).replace("&apos;", "'"));
+                product.setBrand(cursor.getString(4).replace("&apos;", "'"));
                 returnArray.add(product);
             }
             while (cursor.moveToNext());
